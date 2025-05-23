@@ -12,7 +12,7 @@ function Header() {
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
         
         {/* Logo */}
-        <Link to="/dashboard" className="flex items-center rounded-2xl gap-2">
+        <Link to="/" className="flex items-center rounded-2xl gap-2">
           <img
             src="/logo.png"
             alt="Craftora Logo"

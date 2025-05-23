@@ -1,36 +1,36 @@
-import React from 'react'
+import React from 'react';
 
-function ExperiencePreview({resumeInfo}) {
+function ExperiencePreview({ resumeInfo }) {
+  const themeColor = resumeInfo?.themeColor || '#000';
+
   return (
-    <div className='my-6'>
-        <h2 className='text-center font-bold text-sm mb-2'
-        style={{
-            color:resumeInfo?.themeColor
-        }}
-        ></h2>
-        {/* <hr style={{
-            borderColor:resumeInfo?.themeColor
-        }} /> */}
+    <div className="my-6">
+      {resumeInfo?.Experience?.map((experience, index) => (
+        <div key={index} className="mb-6">
+          {/* Job Title and Duration */}
+          <div className="flex justify-between items-start">
+            <h3 className="text-base font-semibold" style={{ color: themeColor }}>
+              {experience?.title}
+            </h3>
+            <span className="text-xs text-gray-700 italic">
+              {experience?.startDate} – {experience?.currentlyWorking ? 'Present' : experience?.endDate}
+            </span>
+          </div>
 
-        {resumeInfo?.Experience?.map((experience,index)=>(
-            <div key={index} className='my-5'>
-                <h2 className='text-sm font-bold'
-                 style={{
-                    color:resumeInfo?.themeColor
-                }}>{experience?.title}</h2>
-                <h2 className='text-xs flex justify-between'>{experience?.companyName}, 
-                {experience?.city}, 
-                {experience?.state}
-                <span>{experience?.startDate} To {experience?.currentlyWorking?'Present':experience.endDate} </span>
-                </h2>
-                {/* <p className='text-xs my-2'>
-                    {experience.workSummery}
-                </p> */}
-                <div className='text-xs my-2' dangerouslySetInnerHTML={{__html:experience?.workSummery}} />
-            </div>
-        ))}
+          {/* Company Info */}
+          <p className="text-sm text-gray-800 mb-1">
+            {experience?.companyName}, {experience?.city}, {experience?.state}
+          </p>
+
+          {/* Work Summary / Responsibilities */}
+          <div
+            className="text-sm text-gray-700 leading-relaxed ml-4 list-disc [&>ul]:list-disc [&>ul]:ml-4 [&>li]:mb-1"
+            dangerouslySetInnerHTML={{ __html: experience?.workSummery }}
+          />
+        </div>
+      ))}
     </div>
-  )
+  );
 }
 
-export default ExperiencePreview
+export default ExperiencePreview;
