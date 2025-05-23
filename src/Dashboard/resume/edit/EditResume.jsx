@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import FormSection from '../../components/FormSection';
-import ResumePreview from '../../components/ResumePreview';
+import FormSection from '../components/FormSection';
+import ResumePreview from '../components/ResumePreview';
 import { ResumeInfoContext } from '@/context/ResumeInfoContext';
 import dummy from '@/data/dummy';
-import GlobalApi from '../../../../../service/GlobalApi';
+import GlobalApi from '../../../../service/GlobalApi';
 
 function EditResume() {
     const {resumeId}=useParams();
