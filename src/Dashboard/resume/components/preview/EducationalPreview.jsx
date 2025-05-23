@@ -7,10 +7,10 @@ function EducationalPreview({resumeInfo}) {
     style={{
         color:resumeInfo?.themeColor
     }}
-    >Education</h2>
-    <hr style={{
+    ></h2>
+    {/* <hr style={{
         borderColor:resumeInfo?.themeColor
-    }} />
+    }} /> */}
 
     {resumeInfo?.education.map((education,index)=>(
         <div key={index} className='my-5'>
