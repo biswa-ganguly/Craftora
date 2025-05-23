@@ -1,35 +1,30 @@
-import React from 'react'
+import React from 'react';
 
-function SkillsPreview({resumeInfo}) {
+function SkillsPreview({ resumeInfo }) {
   return (
-    <div className='my-6'>
-    <h2 className='text-center font-bold text-sm mb-2'
-    style={{
-        color:resumeInfo?.themeColor
-    }}
-    ></h2>
-    {/* <hr style={{
-        borderColor:resumeInfo?.themeColor
-    }} /> */}
+    <div className="my-6 text-sm">
+      <h2
+        className="text-center font-bold text-lg uppercase tracking-wide mb-4"
+        style={{ color: resumeInfo?.themeColor }}
+      >
+      </h2>
 
-    <div className='grid grid-cols-2 gap-3 my-4'>
-        {resumeInfo?.skills.map((skill,index)=>(
-            <div key={index} className='flex items-center justify-between'>
-                <h2 className='text-xs'>{skill.name}</h2>
-                <div className='h-2 bg-gray-200 w-[120px]'>
-                    <div className='h-2'
-                        style={{
-                            backgroundColor:resumeInfo?.themeColor,
-                            width:skill?.rating*20+'%'
-                        }}
-                    >
-                    </div>
-                </div>
-            </div>
+      <div className="flex flex-wrap gap-3 justify-cent">
+        {resumeInfo?.skills?.map((skill, index) => (
+          <span
+            key={index}
+            className="px-3 py-1 text-xs font-medium border rounded-full"
+            style={{
+              borderColor: resumeInfo?.themeColor,
+              color: resumeInfo?.themeColor,
+            }}
+          >
+            {skill.name}
+          </span>
         ))}
+      </div>
     </div>
-    </div>
-  )
+  );
 }
 
-export default SkillsPreview
+export default SkillsPreview;
