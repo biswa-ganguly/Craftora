@@ -37,7 +37,12 @@ function AddResume() {
         }
 
         GlobalApi.CreateNewResume(data).then(resp=>{
-            console.log(resp);
+            console.log(resp.data.data.documentId);
+            if(resp)
+            {
+                setLoading(false);
+                navigation('/dashboard/resume/'+resp.data.data.documentId+"/edit");
+            }
         },(error)=>{
             setLoading(false);
         })
@@ -62,14 +67,12 @@ function AddResume() {
             <DialogHeader>
             <DialogTitle>Create New Resume</DialogTitle>
             <DialogDescription>
-  Add a title for your new resume
-  <Input
-    className="my-2"
-    placeholder="Ex. Full Stack resume"
-    onChange={(e) => setResumeTitle(e.target.value)}
-  />
-</DialogDescription>
-
+                <p>Add a title for your new resume</p>
+                <Input className="my-2" 
+                placeholder="Ex.Full Stack resume"
+                onChange={(e)=>setResumeTitle(e.target.value)}
+                />
+            </DialogDescription>
             <div className='flex justify-end gap-5'>
                 <Button onClick={()=>setOpenDialog(false)} variant="ghost">Cancel</Button>
                 <Button 

@@ -32,6 +32,9 @@ function ResumeCardItem({resume,refreshData}) {
   //   navigation(url)
   // }
 
+  console.log("Resume data:", resume);
+
+
 
   const onDelete=()=>{
     setLoading(true);
@@ -49,8 +52,7 @@ function ResumeCardItem({resume,refreshData}) {
     
        <div className=''>
           <Link to={'/dashboard/resume/'+resume.documentId+"/edit"}>
-        <div className='p-14  bg-gradient-to-b
-          from-pink-100 via-purple-200 to-blue-200
+        <div className='p-14  bg-accent
         h-[280px] 
           rounded-t-lg border-t-4
         '
@@ -60,16 +62,16 @@ function ResumeCardItem({resume,refreshData}) {
         >
               <div className='flex 
         items-center justify-center h-[180px] '>
-                {/* <Notebook/> */}
-                <img src="/cv.png" width={80} height={80} />
+                <Notebook/>
+                {/* <img src="/cv.png" width={80} height={80} /> */}
               </div>
         </div>
         </Link>
-        <div className='border p-3 flex justify-between  text-white rounded-b-lg shadow-lg'
+        <div className='border p-3 flex justify-between rounded-b-lg shadow-lg'
          style={{
           background:resume?.themeColor
         }}>
-          <h2 className='text-sm'>{resume.title}</h2>
+          <h2 className='textlg '>{resume.title}</h2>
          
           <DropdownMenu>
           <DropdownMenuTrigger>

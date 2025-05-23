@@ -1,8 +1,10 @@
-import React from 'react'
-import { Button } from './components/ui/button'
-import Home from './Home'
+
+import './App.css'
+
 import { Navigate, Outlet } from 'react-router-dom'
-import { useUser } from '@clerk/clerk-react';
+import { useUser } from '@clerk/clerk-react'
+import Header from './components/customs/Header'
+import { Toaster } from './components/ui/sonner'
 
 function App() {
 
@@ -14,9 +16,11 @@ function App() {
   }
 
   return (
-    <div className=' text-center '>
+    <>
+      <Header/>
       <Outlet/>
-    </div>
+      <Toaster />
+    </>
   )
 }
 
