@@ -7,7 +7,7 @@ function Header() {
   const { user, isSignedIn } = useUser();
 
   return (
-<header className="bg-primary backdrop-blur-2xl dark:bg-background/40 border-b border-white/20 shadow-md sticky top-0 z-50">
+<header className="bg-primary font-roboto backdrop-blur-2xl dark:bg-background/40 border-b border-white/20 shadow-md sticky top-0 z-50">
 
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
         

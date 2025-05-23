@@ -31,8 +31,8 @@ function ViewResume() {
       <div id="no-print">
         <Header />
 
-        <div className="my-10 mx-6 md:mx-16 lg:mx-36 text-center">
-          <h2 className="text-3xl font-semibold text-gray-800">
+        <div className="my-10 font-roboto mx-6 md:mx-16 lg:mx-36 text-center">
+          <h2 className="text-3xl font-bold text-gray-800">
             🎉 Your AI-Generated Resume is Ready!
           </h2>
           <p className="text-gray-500 mt-2">

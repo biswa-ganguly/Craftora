@@ -6,7 +6,7 @@ import React from 'react'
 
 function Home() {
   return (
-    <div className="bg-background text-foreground">
+    <div className="bg-background font-roboto text-foreground">
       <Header />
 
       {/* HERO SECTION */}
