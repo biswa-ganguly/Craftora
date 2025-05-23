@@ -85,6 +85,16 @@ function Home() {
           </div>
         </div>
       </section>
+      {/* ACKNOWLEDGEMENT FOOTER */}
+      <footer className="text-center py-10 px-4 md:px-8 border-t border-muted bg-background text-muted-foreground text-sm">
+  <p>
+    🚀 Crafted with care by <a href="https://github.com/biswa-ganguly" target="_blank" rel="noopener noreferrer" className="text-primary underline hover:text-primary/80">@Ganguly</a>. 
+    If you find this helpful, we’d love to hear from you! 
+    <br className="hidden md:block" />Thank you for using our resume builder. You're awesome! 💙
+  </p>
+</footer>
+
+
     </div>
   )
 }

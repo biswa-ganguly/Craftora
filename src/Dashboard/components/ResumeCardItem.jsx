@@ -1,12 +1,10 @@
-import { Loader2Icon, MoreVertical, Notebook } from 'lucide-react'
+import { Loader2Icon, MoreVertical, Notebook, Eye, Download, Pencil, Trash2 } from 'lucide-react'
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import {
@@ -18,99 +16,80 @@ import {
   AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogTitle,
-  AlertDialogTrigger,
 } from "@/components/ui/alert-dialog"
 import GlobalApi from './../../../service/GlobalApi'
 import { toast } from 'sonner'
 
-function ResumeCardItem({resume,refreshData}) {
+function ResumeCardItem({ resume, refreshData }) {
+  const navigate = useNavigate();
+  const [openAlert, setOpenAlert] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const navigation=useNavigate();
-  const [openAlert,setOpenAlert]=useState(false);
-  const [loading,setLoading]=useState(false);
-  // const onMenuClick=(url)=>{
-  //   navigation(url)
-  // }
-
-
-
-
-
-  const onDelete=()=>{
+  const onDelete = () => {
     setLoading(true);
-    GlobalApi.DeleteResumeById(resume.documentId).then(resp=>{
-      console.log(resp);
+    GlobalApi.DeleteResumeById(resume.documentId).then(resp => {
       toast('Resume Deleted!');
-      refreshData()
+      refreshData();
       setLoading(false);
       setOpenAlert(false);
-    },(error)=>{
-      setLoading(false);
-    })
-  }
+    }).catch(() => setLoading(false));
+  };
+
   return (
-    
-       <div className=''>
-          <Link to={'/dashboard/resume/'+resume.documentId+"/edit"}>
-        <div className='p-14  bg-accent
-        h-[280px] 
-          rounded-t-lg border-t-4
-        '
-        style={{
-          borderColor:resume?.themeColor
-        }}
+    <div className="rounded-xl overflow-hidden shadow-lg border border-gray-200 hover:shadow-xl transition-all">
+      <Link to={`/dashboard/resume/${resume.documentId}/edit`}>
+        <div
+          className="relative h-[240px] flex items-center justify-center"
+          style={{ backgroundColor: resume?.themeColor }}
         >
-              <div className='flex 
-        items-center justify-center h-[180px] '>
-                <Notebook/>
-                {/* <img src="/cv.png" width={80} height={80} /> */}
-              </div>
+          <div className="absolute inset-0 bg-black bg-opacity-20"></div>
+          <Notebook className="z-10 w-12 h-12 text-white" />
         </div>
-        </Link>
-        <div className='border p-3 flex justify-between rounded-b-lg shadow-lg'
-         style={{
-          background:resume?.themeColor
-        }}>
-          <h2 className='textlg '>{resume.title}</h2>
-         
-          <DropdownMenu>
-          <DropdownMenuTrigger>
-          <MoreVertical className='h-4 w-4 cursor-pointer'/>
+      </Link>
+
+      <div className="flex items-center justify-between px-4 py-3 bg-white">
+        <h2 className="font-semibold text-sm truncate">{resume.title}</h2>
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <button>
+              <MoreVertical className="w-4 h-4 text-gray-600 hover:text-black" />
+            </button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent>
-           
-            <DropdownMenuItem  onClick={()=>navigation('/dashboard/resume/'+resume.documentId+"/edit")}>Edit</DropdownMenuItem>
-            <DropdownMenuItem onClick={()=>navigation('/my-resume/'+resume.documentId+"/view")}>View</DropdownMenuItem>
-            <DropdownMenuItem onClick={()=>navigation('/my-resume/'+resume.documentId+"/view")}>Download</DropdownMenuItem>
-            <DropdownMenuItem onClick={()=>setOpenAlert(true)}>Delete</DropdownMenuItem>
-            
+          <DropdownMenuContent align="end">
+            <DropdownMenuItem onClick={() => navigate(`/dashboard/resume/${resume.documentId}/edit`)}>
+              <Pencil className="w-4 h-4 mr-2" /> Edit
+            </DropdownMenuItem>
+            <DropdownMenuItem onClick={() => navigate(`/my-resume/${resume.documentId}/view`)}>
+              <Eye className="w-4 h-4 mr-2" /> View
+            </DropdownMenuItem>
+            <DropdownMenuItem onClick={() => navigate(`/my-resume/${resume.documentId}/view`)}>
+              <Download className="w-4 h-4 mr-2" /> Download
+            </DropdownMenuItem>
+            <DropdownMenuItem onClick={() => setOpenAlert(true)}>
+              <Trash2 className="w-4 h-4 mr-2 text-red-500" /> <span className="text-red-500">Delete</span>
+            </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
+      </div>
 
-        <AlertDialog open={openAlert}>
-        
+      <AlertDialog open={openAlert}>
         <AlertDialogContent>
           <AlertDialogHeader>
-            <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+            <AlertDialogTitle>Delete Resume?</AlertDialogTitle>
             <AlertDialogDescription>
-              This action cannot be undone. This will permanently delete your account
-              and remove your data from our servers.
+              This action cannot be undone. This will permanently delete the resume.
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
-            <AlertDialogCancel onClick={()=>setOpenAlert(false)}>Cancel</AlertDialogCancel>
-            <AlertDialogAction onClick={onDelete} 
-            disabled={loading}>
-              {loading? <Loader2Icon className='animate-spin'/>:'Delete'}
-              </AlertDialogAction>
+            <AlertDialogCancel onClick={() => setOpenAlert(false)}>Cancel</AlertDialogCancel>
+            <AlertDialogAction onClick={onDelete} disabled={loading}>
+              {loading ? <Loader2Icon className="animate-spin w-4 h-4" /> : 'Delete'}
+            </AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
-
-        </div>
-        </div>
-
+    </div>
   )
 }
 
-export default ResumeCardItem
+export default ResumeCardItem;
