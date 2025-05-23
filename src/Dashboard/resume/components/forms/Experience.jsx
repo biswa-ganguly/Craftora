@@ -61,13 +61,11 @@ function Experience() {
         setExperinceList(newEntries);
     }
 
-    useEffect(()=>{
-        setResumeInfo({
-            ...resumeInfo,
-            Experience:experinceList
-        });
-     
-    },[experinceList]);
+    useEffect(() => {
+        if (Array.isArray(resumeInfo?.Experience) && resumeInfo.Experience.length > 0) {
+          setExperinceList(resumeInfo.Experience);
+        }
+      }, [resumeInfo]);
 
 
     const onSave=()=>{

@@ -31,14 +31,13 @@ function Dashboard() {
       mt-10
       '>
         <AddResume/>
-        {resumeList.length>0?resumeList.map((resume,index)=>(
-          <ResumeCardItem resume={resume} key={index} refreshData={GetResumesList} />
-        )):
-        [1,2,3,4].map((item,index)=>(
-          <div className='h-[280px] rounded-lg bg-slate-200 animate-pulse'>
-          </div>
-        ))
-        }
+        {resumeList.length > 0 ? resumeList.map((resume) => (
+  <ResumeCardItem resume={resume} key={resume.id} refreshData={GetResumesList} />
+)) : [1, 2, 3, 4].map((item, index) => (
+  <div key={index} className='h-[280px] rounded-lg bg-slate-200 animate-pulse'>
+  </div>
+))}
+
       </div>
     </div>
   )

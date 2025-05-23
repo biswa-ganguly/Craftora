@@ -1,5 +1,5 @@
 
-import './App.css'
+
 
 import { Navigate, Outlet } from 'react-router-dom'
 import { useUser } from '@clerk/clerk-react'

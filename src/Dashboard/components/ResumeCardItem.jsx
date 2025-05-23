@@ -32,7 +32,7 @@ function ResumeCardItem({resume,refreshData}) {
   //   navigation(url)
   // }
 
-  console.log("Resume data:", resume);
+
 
 
 

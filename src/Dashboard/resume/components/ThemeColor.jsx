@@ -34,7 +34,7 @@ function ThemeColor() {
             }
         }
         GlobalApi.UpdateResumeDetail(resumeId,data).then(resp=>{
-            console.log(resp);
+            console.log(resp, "colour updated");
             toast('Theme Color Updated')
         })
     }
@@ -48,19 +48,15 @@ function ThemeColor() {
   <PopoverContent>
     <h2 className='mb-2 text-sm font-bold'>Select Theme Color</h2>
     <div className='grid grid-cols-5 gap-3'>
-        {colors.map((item,index)=>(
-            <div 
-            onClick={()=>onColorSelect(item)}
-            className={`h-5 w-5 rounded-full cursor-pointer
-             hover:border-black border
-             ${selectedColor==item&&'border border-black'}
-             `}
-            style={{
-                background:item
-            }}>
-
-            </div>
-        ))}
+    {colors.map((item, index) => (
+  <div
+    key={item + index}
+    onClick={() => onColorSelect(item)}
+    className={`h-5 w-5 rounded-full cursor-pointer hover:border-black border
+      ${selectedColor === item ? 'border border-black' : ''}`}
+    style={{ background: item }}
+  />
+))}
     </div>
   </PopoverContent>
 </Popover>
