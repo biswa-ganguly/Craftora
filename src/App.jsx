@@ -1,7 +1,7 @@
 import React from 'react'
 import { RouterProvider, createBrowserRouter, Outlet, Navigate } from 'react-router-dom'
 import Home from './home/Home.jsx'
-import Dashboard from './dashboard/Dashboard'
+import Dashboard from './dashboard/Dashboard.jsx'
 import SignInPage from './auth/sign-in/index.jsx'
 import EditResume from './dashboard/resume/[resumeId]/edit/EditResume.jsx'
 import ViewResume from './my-resume/[resumeId]/view/ViewResume.jsx'
