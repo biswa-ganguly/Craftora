@@ -15,7 +15,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { ResumeInfoContext } from '@/context/ResumeInfoContext';
 import { Brain, LoaderCircle } from 'lucide-react';
-import { AIChatSession } from './../../../../service/AiModal';
+import { AIChatSession } from '../../../../service/AiModal';
 import { toast } from 'sonner';
 
 const PROMPT = `

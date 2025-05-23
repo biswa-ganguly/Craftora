@@ -3,10 +3,10 @@ import { Textarea } from '@/components/ui/textarea';
 import { ResumeInfoContext } from '@/context/ResumeInfoContext';
 import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import GlobalApi from './../../../../../service/GlobalApi';
+import GlobalApi from '../../../../../service/GlobalApi';
 import { Brain, LoaderCircle } from 'lucide-react';
 import { toast } from 'sonner';
-import { AIChatSession } from './../../../../../service/AiModal';
+import { AIChatSession } from '../../../../../service/AiModal';
 
 const prompt = "Job Title: {jobTitle} , Depends on job title give me list of summery for 3 experience level, Mid Level and Freasher level in 3 -4 lines in array format, With summery and experience_level Field in JSON Format";
 

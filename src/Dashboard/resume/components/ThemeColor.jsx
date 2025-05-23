@@ -7,7 +7,7 @@ import {
 import { Button } from '@/components/ui/button'
 import { LayoutGrid } from 'lucide-react'
 import { ResumeInfoContext } from '@/context/ResumeInfoContext'
-import GlobalApi from './../../../../service/GlobalApi'
+import GlobalApi from '../../../../service/GlobalApi'
 import { useParams } from 'react-router-dom'
 import { toast } from 'sonner'
 
