@@ -5,10 +5,10 @@ import './index.css'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import SignInPage from './auth/sign-in/index.jsx'
 import Home from './home/Home.jsx'
-import Dashboard from './dashboard/index.jsx'
+import Dashboard from './dashboard/Dashboard.jsx'
 import { ClerkProvider } from '@clerk/clerk-react'
-import EditResume from './dashboard/resume/[resumeId]/edit/index.jsx'
-import ViewResume from './my-resume/[resumeId]/view/index.jsx'
+import EditResume from './dashboard/resume/[resumeId]/edit/EditResume.jsx'
+import ViewResume from './my-resume/[resumeId]/view/ViewResume.jsx'
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
 const router=createBrowserRouter([
