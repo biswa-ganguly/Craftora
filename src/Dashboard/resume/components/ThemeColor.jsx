@@ -33,10 +33,15 @@ function ThemeColor() {
                 themeColor:color
             }
         }
-        GlobalApi.UpdateResumeDetail(resumeId,data).then(resp=>{
-            console.log(resp, "colour updated");
-            toast('Theme Color Updated')
-        })
+        GlobalApi.UpdateResumeDetail(resumeId, data)
+  .then(resp => {
+    console.log(resp, "colour updated");
+    toast('Theme Color Updated');
+  })
+  .catch(err => {
+    console.error('Failed to update color:', err);
+    toast.error('Failed to update theme color');
+  });
     }
 
   return (
