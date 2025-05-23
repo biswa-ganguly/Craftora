@@ -7,7 +7,7 @@ import React from 'react'
 function Home() {
   return (
     <div className="bg-background font-roboto text-foreground">
-      <Header />
+      {/* <Header /> */}
 
       {/* HERO SECTION */}
       <section className="relative z-10 py-24 px-4 md:px-8 lg:px-16 text-center bg-gradient-to-b from-muted/30 to-background overflow-hidden">
