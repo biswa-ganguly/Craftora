@@ -12,12 +12,29 @@ import { useParams } from 'react-router-dom'
 import { toast } from 'sonner'
 
 function ThemeColor() {
-    const colors = [
-        "#FF5733", "#33FF57", "#3357FF", "#FF33A1", "#A133FF",
-        "#33FFA1", "#FF7133", "#71FF33", "#7133FF", "#FF3371",
-        "#33FF71", "#3371FF", "#A1FF33", "#33A1FF", "#FF5733",
-        "#5733FF", "#33FF5A", "#5A33FF", "#FF335A", "#335AFF"
-    ];
+  const colors = [
+    "#1A1A1A", // Dark Charcoal
+    "#2C3E50", // Midnight Blue
+    "#34495E", // Blue Gray
+    "#1ABC9C", // Strong Cyan
+    "#2980B9", // Bold Blue
+    "#2ECC71", // Soft Green
+    "#E67E22", // Warm Orange
+    "#D35400", // Burnt Orange
+    "#8E44AD", // Muted Purple
+    "#BDC3C7", // Light Gray
+    "#7F8C8D", // Medium Gray
+    "#95A5A6", // Muted Teal Gray
+    "#F39C12", // Amber Yellow
+    "#C0392B", // Soft Red
+    "#27AE60", // Emerald Green
+    "#3498DB", // Sky Blue
+    "#AAB7B8", // Soft Gray
+    "#ECF0F1", // Light Off-White
+    "#F4F6F7", // Paper White
+    "#555555"  // Deep Gray
+  ];
+  
 
     const { resumeInfo, setResumeInfo } = useContext(ResumeInfoContext);
     const [selectedColor, setSelectedColor] = useState();
