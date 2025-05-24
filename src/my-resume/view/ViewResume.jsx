@@ -29,7 +29,7 @@ function ViewResume() {
   return (
     <ResumeInfoContext.Provider value={{ resumeInfo, setResumeInfo }}>
       <div id="no-print">
-        <Header />
+        {/* <Header /> */}
 
         <div className="my-10 font-roboto mx-6 md:mx-16 lg:mx-36 text-center">
           <h2 className="text-3xl font-bold text-gray-800">
