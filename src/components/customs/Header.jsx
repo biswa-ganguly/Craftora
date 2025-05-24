@@ -25,7 +25,7 @@ function Header() {
           {isSignedIn ? (
             <>
               <Link to="/dashboard">
-                <Button variant="ghost" className="text-base bg-primary-foreground  font-medium hover:text-primary transition-colors">
+                <Button variant="ghost" className="text-base bg-accent  font-medium hover:scale-105 transition  delay-75 ">
                   Dashboard
                 </Button>
               </Link>
