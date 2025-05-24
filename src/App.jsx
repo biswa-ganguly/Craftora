@@ -8,6 +8,7 @@ import ViewResume from './my-resume/view/ViewResume.jsx'
 import { useUser } from '@clerk/clerk-react'
 import Header from './components/customs/Header'
 import { Toaster } from './components/ui/sonner'
+import { Analytics } from '@vercel/analytics/react';
 
 function RequireAuth() {
   const { isLoaded, isSignedIn } = useUser();
@@ -20,6 +21,7 @@ function Layout() {
     <>
       <Header />
       <Outlet />
+      <Analytics />
       <Toaster />
     </>
   );
