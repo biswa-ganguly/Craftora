@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import AddResume from '../dashboard/components/AddResume'
+import AddResume from '../Dashboard/components/AddResume'
 import { useUser } from '@clerk/clerk-react'
 import GlobalApi from '../../service/GlobalApi'
-import ResumeCardItem from '../dashboard/components/ResumeCardItem'
+import ResumeCardItem from '../Dashboard/components/ResumeCardItem'
 
 function Dashboard() {
   const { user } = useUser()

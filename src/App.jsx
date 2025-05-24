@@ -3,7 +3,7 @@ import { RouterProvider, createBrowserRouter, Outlet, Navigate } from 'react-rou
 import Home from './pages/Home.jsx'
 import Dashboard from './pages/Dashboard.jsx'
 import SignInPage from './auth/sign-in/index.jsx'
-import EditResume from './dashboard/resume/edit/EditResume.jsx'
+import EditResume from './Dashboard/resume/edit/EditResume.jsx'
 import ViewResume from './my-resume/view/ViewResume.jsx'
 import { useUser } from '@clerk/clerk-react'
 import Header from './components/customs/Header'
