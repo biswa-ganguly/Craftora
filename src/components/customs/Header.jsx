@@ -7,8 +7,7 @@ function Header() {
   const { user, isSignedIn } = useUser();
 
   return (
-<header className="bg-primary font-roboto backdrop-blur-2xl dark:bg-background/40 border-b border-white/20 shadow-md sticky top-0 z-50">
-
+    <header className="bg-primary font-roboto backdrop-blur-2xl dark:bg-background border-b border-white/20 shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
         
         {/* Logo */}
@@ -25,7 +24,7 @@ function Header() {
           {isSignedIn ? (
             <>
               <Link to="/dashboard">
-                <Button variant="ghost" className="text-base bg-accent  font-medium hover:scale-105 transition  delay-75 ">
+                <Button variant="ghost" className="text-base bg-accent font-medium hover:scale-105 transition delay-75">
                   Dashboard
                 </Button>
               </Link>
@@ -39,8 +38,8 @@ function Header() {
             </>
           ) : (
             <Link to="/auth/sign-in">
-              <Button className="px-5 py-2 text-base font-semibold shadow-md hover:shadow-lg transition-all">
-                Dashboard
+              <Button variant="ghost" className="text-base bg-accent font-medium hover:scale-105 transition delay-75">
+                Go to Dashboard
               </Button>
             </Link>
           )}
